@@ -1,51 +1,52 @@
-import { Globe, Shield, Headphones, Award } from "lucide-react"
+import Icon from "@/components/ui/icon"
 
 const features = [
   {
-    icon: Globe,
-    title: "Глобальная сеть",
-    description: "Доступ к 150+ направлениям по всему миру с местными экспертами и аутентичным опытом",
+    icon: "Swords",
+    title: "Полная история серии",
+    description: "От оригинального Mortal Kombat 1992 года до MK1 2023 — вся хронология событий и персонажей",
   },
   {
-    icon: Shield,
-    title: "Безопасное бронирование",
-    description: "Защищенные платежи и полная страховка путешествий для вашего спокойствия",
+    icon: "Shield",
+    title: "Энциклопедия бойцов",
+    description: "Подробные досье на каждого бойца: история, способности, Fatality и секретные приёмы",
   },
   {
-    icon: Headphones,
-    title: "Поддержка 24/7",
-    description: "Круглосуточная служба поддержки до, во время и после вашей поездки",
+    icon: "Globe",
+    title: "Карта реалмов",
+    description: "Земной Реалм, Внешний Мир, Нижний Реалм — исследуй все вселенные и их обитателей",
   },
   {
-    icon: Award,
-    title: "Гарантия лучшей цены",
-    description: "Конкурентные цены с гарантией лучшей цены и гибкими вариантами оплаты",
+    icon: "Zap",
+    title: "Гайды и советы",
+    description: "Комбо, стратегии, секреты и пасхалки для всех частей игры от сообщества фанатов",
   },
 ]
 
 export function WhyChooseUs() {
   return (
-    <section id="about" className="py-32 bg-muted/30">
+    <section id="about" className="py-32 bg-black/50 border-y border-red-900/30">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-5xl md:text-6xl font-light tracking-tight mb-6 text-balance">
-            Почему выбирают <span className="font-semibold">Horizon Voyages</span>
+          <div className="inline-block border border-red-700/50 px-4 py-1 text-xs tracking-[0.3em] text-red-400 uppercase mb-6">
+            О сайте
+          </div>
+          <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance text-white uppercase">
+            Всё о вселенной <span className="text-red-500">Mortal Kombat</span>
           </h2>
-          <p className="text-lg text-muted-foreground text-balance leading-relaxed">
-            Мы превращаем ваши мечты о путешествиях в реальность с исключительным сервисом и незабываемыми впечатлениями
+          <p className="text-lg text-white/50 text-balance leading-relaxed">
+            Крупнейший русскоязычный фан-ресурс о легендарной серии файтингов
           </p>
         </div>
 
-        {/* Features Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
-            <div key={index} className="text-center space-y-4">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10 text-primary mb-2">
-                <feature.icon className="h-8 w-8" />
+            <div key={index} className="text-center space-y-4 p-6 border border-red-900/20 hover:border-red-600/40 transition-colors group">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-red-900/20 text-red-500 mb-2 border border-red-700/30 group-hover:bg-red-900/40 transition-colors">
+                <Icon name={feature.icon} fallback="Star" size={32} />
               </div>
-              <h3 className="text-xl font-semibold">{feature.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
+              <h3 className="text-xl font-bold text-white uppercase tracking-wide">{feature.title}</h3>
+              <p className="text-sm text-white/50 leading-relaxed">{feature.description}</p>
             </div>
           ))}
         </div>
